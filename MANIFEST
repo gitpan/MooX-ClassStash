@@ -9,4 +9,5 @@ dist.ini
 lib/MooX/ClassStash.pm
 t/00-load.t
 t/10-simple.t
+t/15-moox.t
 t/release-pod-syntax.t

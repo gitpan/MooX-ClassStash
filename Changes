@@ -3,8 +3,26 @@ Changes from 1738-12-31 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.001 at 2012-10-14 01:56:55 +0000
+version 0.002 at 2012-10-14 02:31:35 +0000
 ------------------------------------------
+
+  Change: 4408e7de2f7c24184d09927bb8c0bb33822028af
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-10-14 04:30:48 +0000
+
+    Added MooX usage example, added MooX test (skipped if not installed) 
+
+  Change: e90f0366fab5c9f16ff68508e8b56df8cf5d85aa
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-10-14 04:11:30 +0000
+
+    Fixed SYNOPSIS 
+
+  Change: 5c8deb37bd84fb2d89eb40ab015d76e4f1c160ee
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-10-14 04:08:52 +0000
+
+    Less references for multiply attribute names add_attribute calls 
 
   Change: 14bd7e51dce6a2d4ce846438b9215621e562dcc8
   Author: Torsten Raudssus <torsten@raudss.us>

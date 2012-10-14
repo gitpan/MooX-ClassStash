@@ -26,7 +26,7 @@ my %WriteMakefileArgs = (
     "Moo" => "1.000004",
     "Package::Stash" => "0.33"
   },
-  "VERSION" => "0.001",
+  "VERSION" => "0.002",
   "test" => {
     "TESTS" => "t/*.t"
   }

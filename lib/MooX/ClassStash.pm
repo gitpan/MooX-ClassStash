@@ -3,7 +3,7 @@ BEGIN {
   $MooX::ClassStash::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $MooX::ClassStash::VERSION = '0.001';
+  $MooX::ClassStash::VERSION = '0.002';
 }
 # ABSTRACT: Extra class information for Moo 
 
@@ -94,8 +94,9 @@ sub BUILD {
 	$self->around_method('has',sub {
 		my $orig = shift;
 		my $method = shift;
+		my $data = { @_ };
 		for (ref $method eq 'ARRAY' ? @{$method} : ($method)) {
-			$self->attributes->{$_} = { @_ };
+			$self->attributes->{$_} = $data;
 		}
 		$orig->($method, @_);
 	})
@@ -255,7 +256,7 @@ MooX::ClassStash - Extra class information for Moo
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 SYNOPSIS
 
@@ -268,6 +269,16 @@ version 0.001
 
     sub add_own_data { shift->class_stash->add_data(@_) }
     sub get_own_data { shift->class_stash->get_data(@_) }
+  }
+
+  # or with L<MooX>
+
+  {
+    package MyClass;
+    use MooX qw(
+      ClassStash
+    );
+    ...
   }
 
   my $class_stash = MyClass->class_stash;
@@ -283,10 +294,10 @@ version 0.001
   print $class_stash->list_all_keywords;
 
   $class_stash->add_data( a => 1 ); # caller specific
-  $class_stash->add_own_data( a => 2 );
+  MyClass->add_own_data( a => 2 );
 
   print $class_stash->get_data('a'); # 1
-  print $class_stash->get_own_data('a'); # 2
+  print MyClass->get_own_data('a'); # 2
 
 =head1 DESCRIPTION
 
