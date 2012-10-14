@@ -41,7 +41,7 @@
          "web" : "https://github.com/Getty/p5-moox-classstash"
       }
    },
-   "version" : "0.002",
+   "version" : "0.003",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.014002"

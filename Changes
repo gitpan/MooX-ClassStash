@@ -3,8 +3,27 @@ Changes from 1738-12-31 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.002 at 2012-10-14 02:31:35 +0000
+version 0.003 at 2012-10-14 05:12:59 +0000
 ------------------------------------------
+
+  Change: 0fe0989be28f7fdcc84987e19c07fab047c56df8
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-10-14 07:12:48 +0000
+
+    More documentation, added modifier test 
+
+  Change: a32008e1df701b2af5063986c5270154c3284a24
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-10-14 04:55:28 +0000
+
+    Fixed typo in error message, and now i know that L<> doesnt work in
+    code 
+
+  Change: 51f46235f0980bb8312de5746b22a6d921e56f91
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-10-14 04:37:09 +0000
+
+    Fixed typo in POD 
 
   Change: 4408e7de2f7c24184d09927bb8c0bb33822028af
   Author: Torsten Raudssus <torsten@raudss.us>

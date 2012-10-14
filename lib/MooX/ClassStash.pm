@@ -3,7 +3,7 @@ BEGIN {
   $MooX::ClassStash::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $MooX::ClassStash::VERSION = '0.002';
+  $MooX::ClassStash::VERSION = '0.003';
 }
 # ABSTRACT: Extra class information for Moo 
 
@@ -18,7 +18,7 @@ sub import {
 	my ( $class, @args ) = @_;
 	my $target = caller;
 	unless ($target->can('has')) {
-		warn "Not using ".$class." on a Moo class, doing nothing";
+		warn "Not using ".$class." on a class which is not Moo, doing nothing";
 		return;
 	}
 	return if defined $stash_cache{$target};
@@ -256,7 +256,7 @@ MooX::ClassStash - Extra class information for Moo
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 SYNOPSIS
 
@@ -271,7 +271,7 @@ version 0.002
     sub get_own_data { shift->class_stash->get_data(@_) }
   }
 
-  # or with L<MooX>
+  # or with MooX
 
   {
     package MyClass;
@@ -307,9 +307,9 @@ version 0.002
 
 The name of the class for the class stash.
 
-=head2 class
+=head2 package_stash
 
-The L<Package::Stash> object of the given class
+The L<Package::Stash> object of the given class.
 
 =head2 attributes
 
@@ -337,21 +337,34 @@ is the key, second parameter will be the value.
 
 =head2 get_data
 
-Get your, caller specific, data. If you give a paramter, if will only give
-back the value of this key. If none is given, you get a HashRef of all the
+Get your, caller specific, data. If you give a parameter, if will only give
+back the value of this key. If none is given, you get the HashRef of all the
 data stored.
 
 =head2 remove_data
 
+Remove from your, caller specific, data the given key of the HashRef. There is
+no direct call to delete all the data at once.
+
 =head2 add_keyword
+
+Adds the given CodeRef as function to the package, but also add it to
+L</keyword_functions> list, so that it gets excluded on method listings.
 
 =head2 get_keyword
 
+Get the CodeRef of the given keyword. Technical identical to L</get_method>.
+
 =head2 has_keyword
+
+Checks for the given keyword. Technical identical to L</has_method>.
 
 =head2 remove_keyword
 
-=head2 get_or_add_keyword_keyword
+Remove the function from the package, but also remove it from
+L</keyword_functions> list.
+
+=head2 get_or_add_keyword
 
 =head2 add_attribute
 
@@ -373,21 +386,41 @@ B<Not implemented yet>
 
 =head2 add_method
 
+Add a method to the class.
+
 =head2 get_method
+
+Get the CodeRef of the given method name.
 
 =head2 has_method
 
+Checks if the given method exist.
+
 =head2 remove_method
+
+Delete the given method from the class.
 
 =head2 get_or_add_method
 
 =head2 list_all_methods
 
+List all methods of the class. This method fetches all functions of the
+package and filters out the keywords from L</keyword_functions>.
+
 =head2 after_method
+
+Install an after modifier on the function given by the first parameter, with
+the CodeRef given as second parameter. See L<Moo/after>.
 
 =head2 before_method
 
+Install a before modifier on the function given by the first parameter, with
+the CodeRef given as second parameter. See L<Moo/before>.
+
 =head2 around_method
+
+Install an around modifier on the function given by the first parameter, with
+the CodeRef given as second parameter. See L<Moo/around>.
 
 =head1 AUTHOR
 
