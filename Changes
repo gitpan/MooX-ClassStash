@@ -1,0 +1,43 @@
+==================================================
+Changes from 1738-12-31 00:00:00 +0000 to present.
+==================================================
+
+------------------------------------------
+version 0.001 at 2012-10-14 01:56:55 +0000
+------------------------------------------
+
+  Change: 14bd7e51dce6a2d4ce846438b9215621e562dcc8
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-10-14 03:56:18 +0000
+
+    Fixed problem with Class::Method::Modifiers function collides on
+    import 
+
+  Change: 317316e9af6186c049ec5629a5274e072840bd6b
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-10-14 03:52:14 +0000
+
+    Removed usage of Test::LoadAllModules for load test, added warning
+    for usage in non Moo classes. 
+
+  Change: 213614b91ff97f5666428d75c22aa99b32006f8f
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-10-14 03:46:55 +0000
+
+    Added attribute functions 
+
+  Change: b5a1d8dcd61cd79c0db2b3151cc9c9a1200b09e4
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-10-14 02:57:24 +0000
+
+    First implementation 
+
+  Change: 83e5d9eed3483eef16688bb2565ca11755c0c85c
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-10-14 01:25:40 +0000
+
+    initial commit 
+
+================
+End of releases.
+================
