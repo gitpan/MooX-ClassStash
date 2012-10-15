@@ -11,4 +11,5 @@ t/00-load.t
 t/10-simple.t
 t/15-moox.t
 t/20-modifier.t
+t/lib/TestMooXClassStashMooX.pm
 t/release-pod-syntax.t

@@ -1,10 +1,22 @@
 ==================================================
-Changes from 1738-12-31 00:00:00 +0000 to present.
+Changes from 1739-01-01 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.003 at 2012-10-14 05:12:59 +0000
+version 0.004 at 2012-10-15 03:31:55 +0000
 ------------------------------------------
+
+  Change: e9ed534af6246def2f2ca4abf7a3a4d284a6ecec
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-10-15 05:31:45 +0000
+
+    Ok, that might be better for this... 
+
+  Change: ce5b550481e6ae548c1b7826b66c5ae357c2bb78
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-10-15 05:26:19 +0000
+
+    Try to not let cpantesters fail on missing MooX 
 
   Change: 0fe0989be28f7fdcc84987e19c07fab047c56df8
   Author: Torsten Raudssus <torsten@raudss.us>

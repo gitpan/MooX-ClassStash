@@ -3,7 +3,7 @@ BEGIN {
   $MooX::ClassStash::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $MooX::ClassStash::VERSION = '0.003';
+  $MooX::ClassStash::VERSION = '0.004';
 }
 # ABSTRACT: Extra class information for Moo 
 
@@ -256,7 +256,7 @@ MooX::ClassStash - Extra class information for Moo
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 SYNOPSIS
 

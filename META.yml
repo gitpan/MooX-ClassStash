@@ -20,7 +20,7 @@ requires:
 resources:
   homepage: https://github.com/Getty/p5-moox-classstash
   repository: https://github.com/Getty/p5-moox-classstash.git
-version: 0.003
+version: 0.004
 x_Dist_Zilla:
   perl:
     version: 5.014002

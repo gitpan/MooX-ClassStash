@@ -4,23 +4,18 @@ use strict;
 use warnings;
 use Test::More;
 
+use FindBin qw($Bin);
+use lib "$Bin/lib";
+
 eval { require MooX };
 
-plan skip_all => "No MooX installed" if $@;
-
-my $default_sub = sub {1};
-
-{
-	package TestMooXClassStashMooX;
-	use MooX qw(
-		ClassStash
-	);
-
-	has i => (
-		is => 'ro',
-		default => $default_sub,
-	);
+if ($@) {
+	plan skip_all => "No MooX installed";
+	done_testing;
+	exit 0;
 }
+
+require TestMooXClassStashMooX;
 
 my $test = TestMooXClassStashMooX->new;
 isa_ok($test,'TestMooXClassStashMooX');
@@ -34,18 +29,7 @@ is($stash,$other_stash,'Other object has same MooX::ClassStash');
 
 is($test->i,1,'Checking that default value still works for i');
 
-is_deeply($test->class_stash->attributes,{
-	i => {
-		is => 'ro',
-		default => $default_sub,
-	},
-},'Proper attributes in class stash');
-
 is($test->class_stash->get_attribute( i => 'is'),'ro','get_attribute method works with key');
-is_deeply($test->class_stash->get_attribute('i'),{
-	is => 'ro',
-	default => $default_sub,
-},'get_attribute method works without key');
 
 is_deeply([$test->class_stash->list_all_methods],[qw(
 	class_stash
