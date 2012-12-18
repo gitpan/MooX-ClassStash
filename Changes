@@ -1,10 +1,17 @@
 ==================================================
-Changes from 1739-01-01 00:00:00 +0000 to present.
+Changes from 1739-03-06 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.004 at 2012-10-15 03:31:55 +0000
+version 0.005 at 2012-12-18 18:28:15 +0000
 ------------------------------------------
+
+  Change: 606d73d25c6949e342b328ec813951ee1d63fda0
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-12-18 19:25:25 +0000
+
+    Implemented get_or_add_attribute, referenced on remove_attribute for
+    volunteers (cause its anyway a bad idea) 
 
   Change: e9ed534af6246def2f2ca4abf7a3a4d284a6ecec
   Author: Torsten Raudssus <torsten@raudss.us>

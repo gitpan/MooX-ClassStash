@@ -3,7 +3,7 @@ BEGIN {
   $MooX::ClassStash::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $MooX::ClassStash::VERSION = '0.004';
+  $MooX::ClassStash::VERSION = '0.005';
 }
 # ABSTRACT: Extra class information for Moo 
 
@@ -196,10 +196,16 @@ sub has_attribute {
 }
 
 
-sub remove_attribute { ... }
+sub remove_attribute { die "If you need MooX::ClassStash->remove_attribute, patches welcome" }
 
 
-sub get_or_add_attribute { ... }
+sub get_or_add_attribute {
+	my $self = shift;
+	my $attribute = shift;
+	die __PACKAGE__."->get_or_add_attribute requires complete attribute definition" if @_ % 2 or @_ == 0;
+	$self->add_attribute($attribute => @_) unless defined $self->attributes->{$attribute};
+	return $self->attributes->{$attribute};
+}
 
 
 sub list_all_keywords {
@@ -256,7 +262,7 @@ MooX::ClassStash - Extra class information for Moo
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head1 SYNOPSIS
 
@@ -376,11 +382,9 @@ It is the same like calling L<Moo/has> inside the package.
 
 =head2 remove_attribute
 
-B<Not implemented yet>
+If you want it, implement it... ;)
 
 =head2 get_or_add_attribute
-
-B<Not implemented yet>
 
 =head2 list_all_keywords
 

@@ -69,6 +69,27 @@ is_deeply($test->class_stash->attributes,{
 },'Proper attributes in class stash');
 
 is($test->class_stash->get_attribute( i => 'is'),'ro','get_attribute method works with key');
+
+is_deeply([$test->class_stash->get_or_add_attribute( i => (
+	is => 'ro',
+	default => $default_sub,
+))],[{
+	is => 'ro',
+	default => $default_sub,
+}],'get_or_add_attribute method works');
+
+ok(!$test->class_stash->get_attribute('m'),'get_attribute m so far failing');
+
+is_deeply($test->class_stash->get_or_add_attribute( m => (
+	is => 'ro',
+	default => $default_sub,
+)),{
+	is => 'ro',
+	default => $default_sub,
+},'get_or_add_attribute method works with new generate attribute l');
+
+ok($test->class_stash->get_attribute('m'),'get_attribute m not failing anymore');
+
 is_deeply($test->class_stash->get_attribute('i'),{
 	is => 'ro',
 	default => $default_sub,
@@ -81,6 +102,7 @@ is_deeply([$test->class_stash->list_all_methods],[qw(
 	i
 	j
 	k
+	m
 	new
 	package_stash
 )],'Proper methods in class stash');
